@@ -1,0 +1,29 @@
+[project]
+name = "example"
+dynamic = ["readme", "version"]
+description = ""
+authors = [
+  { name="Craig Sands", email="craig.sands@gmail.com" }
+]
+requires-python = ">=3.12"
+dependencies = [
+  "pendulum",
+  "pydantic",
+]
+
+[tool.isort]
+profile = "black"
+src_paths = ["src/example", "tests"]
+
+[tool.pytest.ini_options]
+addopts = [
+    "--import-mode=importlib",
+]
+
+[tool.setuptools.dynamic]
+readme = {file = ["README.md"]}
+version = {attr = "example.__version__"}
+
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"

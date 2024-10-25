@@ -1,0 +1,7 @@
+-e .
+aws-lambda-powertools
+build
+black
+isort
+pytest
+pytest-cov
